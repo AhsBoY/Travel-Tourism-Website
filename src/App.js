@@ -13,8 +13,8 @@ import Footer from './Components/Footer/Footer';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import OrderBooking from './Components/Bookings/OrderBooking/OrderBooking';
 import MyBookings from './Components/Bookings/MyBookings/MyBookings';
-import { Adb } from '@mui/icons-material';
 import Admin from './Components/Admin/Admin';
+import NotFound from './Components/NotFound/NotFound';
 
 
 function App() {
@@ -42,6 +42,9 @@ function App() {
           <PrivateRoute path="/admin">
             <Admin />
           </PrivateRoute>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
         <Footer />
       </Router>

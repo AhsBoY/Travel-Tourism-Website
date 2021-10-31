@@ -65,7 +65,7 @@ const Admin = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     useEffect(() => {
-        axios.get("http://localhost:5000/bookings")
+        axios.get("https://howling-tomb-43983.herokuapp.com/bookings")
             .then(res => {
                 // console.log(res.data)
                 setInfos(res.data)
@@ -74,7 +74,7 @@ const Admin = () => {
     const handleDelete = id => {
         const confrimation = window.confirm("You Sure , User Will Be Very Mad At You?")
         if (confrimation) {
-            axios.delete(`http://localhost:5000/bookings/${id}`)
+            axios.delete(`https://howling-tomb-43983.herokuapp.com/bookings/${id}`)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.deletedCount > 0) {
@@ -97,7 +97,7 @@ const Admin = () => {
         const describe = describeRef.current.value
         // console.log(name, img, price, describe)
         const newService = { name, img, price, describe }
-        axios.post("http://localhost:5000/info", newService)
+        axios.post("https://howling-tomb-43983.herokuapp.com/info", newService)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {
@@ -114,7 +114,7 @@ const Admin = () => {
         const information = infos.filter(info => info._id === id)
         information[0].status = "Approved"
         // console.log(information[0])
-        axios.put(`http://localhost:5000/info/${id}`, information)
+        axios.put(`https://howling-tomb-43983.herokuapp.com/info/${id}`, information)
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount) {

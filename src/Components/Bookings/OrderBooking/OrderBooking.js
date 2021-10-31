@@ -13,7 +13,7 @@ const OrderBooking = () => {
     const onSubmit = data => {
         data.status = "pending"
         console.log(data)
-        axios.post("http://localhost:5000/bookings", data)
+        axios.post("https://howling-tomb-43983.herokuapp.com/bookings", data)
             .then(res => {
                 console.log(res.data)
                 if (res.data) {
@@ -24,7 +24,7 @@ const OrderBooking = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/info/${id}`)
+        axios.get(`https://howling-tomb-43983.herokuapp.com/info/${id}`)
             .then(res => {
                 setInfo(res.data)
             })
