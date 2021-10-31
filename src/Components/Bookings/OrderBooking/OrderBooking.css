@@ -1,0 +1,24 @@
+.shipping-form{
+    margin:30px 150px;
+}
+.shipping-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+}
+.error{
+    display: block;
+    text-align:start;
+    color: red;
+    padding-left: 10px;
+}
+
+
+@media only screen and (max-width:600px) {
+    .shipping-form {
+        margin: 25px 25px;
+    }
+  }
